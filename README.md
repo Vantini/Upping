@@ -25,8 +25,8 @@ You can install these dependencies using pip:
   Clone the repository:
 
 ```
-git clone <repository_url>
-cd <repository_directory>
+git clone https://github.com/Vantini/Upping.git
+cd Upping
 ```
 Run the tool:
 
