@@ -30,7 +30,7 @@ cd Upping
 ```
 Run the tool:
 
-` python3 upping.py `
+` python3 Upping.py `
 
 Select an option from the menu:
     
