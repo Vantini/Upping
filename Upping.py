@@ -15,7 +15,7 @@ def options():
         ip = input("IP: ")
         nmaping(ip)
     elif op == str(2):
-        site = input("Site: ")
+        site = str(input("Site: "))
         list_dir(site)
     elif op == str(3):
         domain = input("Domain: ")
@@ -77,7 +77,7 @@ def list_dir(site):
         print(f"Arquivo {wordlist_file} não encontrado.")
         sys.exit(1)
     for word in wordlist:
-        if "https" or "http" in site:
+        if "https" in str(site) or "http" in str(site):
             url = f"{site}{word}"
         else:
             url = f"https://{site}/{word}"
@@ -112,7 +112,7 @@ def list_dns(domain):
                     sub_target = "{}.{}".format(sub_dom, domain)
                     resultados = resolver.resolve(sub_target, "A")
                     for resultado in resultados:
-                        print ("{} -> {}".format(sub_target, resultado))
+                        print("{} -> {}".format(sub_target, resultado))
                         out.write("{} -> {}\n".format(sub_target, resultado))
                 except dns.resolver.NoAnswer:
                     pass
@@ -121,6 +121,7 @@ def list_dns(domain):
     except KeyboardInterrupt:
         print("\nExecução interrompida pelo usuário.")
         sys.exit()
+
 
 def main():
     print("██╗   ██╗██████╗ ██████╗ ██╗███╗   ██╗ ██████╗ ")
